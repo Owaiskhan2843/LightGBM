@@ -45,14 +45,12 @@ app = Flask(__name__)
 
 @app.route('/predict', methods=['POST'])
 def infer_image():
-
+	
 	file = request.form.get('file')
 	img_bytes = file
-    	img = prep_img(img_bytes)
-
-
-    
-    	return jsonify(prediction=predict(img))
+	img = prep_img(img_bytes)
+	
+	return jsonify(prediction=predict(img))
     
 
 @app.route('/', methods=['GET'])
