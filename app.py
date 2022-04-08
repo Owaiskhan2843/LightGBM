@@ -11,8 +11,6 @@ from flask import Flask, jsonify, request
 from prep_image_module import prep_img
 from keras.models import load_model
 import h5py
-le = preprocessing.LabelEncoder()
-#VGG_model  = tf.keras.models.load_model('VGG_model.h5')
 VGG_model = load_model('VGG_model.h5')
 model = joblib.load('LIGHT_GBM.pkl')
 
